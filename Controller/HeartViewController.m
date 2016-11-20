@@ -31,7 +31,7 @@
     self.live.backgroundColor = [UIColor colorWithRed:186/255.0 green:251/255.0 blue:231/255.0 alpha:0.9];
     
 
-
+    [self showAlertView];
 
 //    self.stepLbl.text =@"当前步行了0步";
     
