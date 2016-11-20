@@ -18,11 +18,6 @@
 
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
 
-@property (strong, nonatomic) IBOutlet UISwitch *select;
-
-@property (strong, nonatomic) IBOutlet UILabel *stepLbl;
-@property (strong, nonatomic) IBOutlet UILabel *switchLbl;
-
 @property(nonatomic,strong)CMPedometer *pedometer;
 
 @end
@@ -31,39 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.select.hidden = YES;
-    self.stepLbl.hidden = YES;
-    self.switchLbl.hidden = YES;
     //创建一个心电图的view
     self.live = [[HeartLive alloc] initWithFrame:CGRectMake(self.view.mj_w/2-100, 100,200,200)];
     self.live.backgroundColor = [UIColor colorWithRed:186/255.0 green:251/255.0 blue:231/255.0 alpha:0.9];
-    self.live.layer.cornerRadius = 100;
-    self.live.layer.masksToBounds = YES;
     
-    // 设置轨道的厚度
-    self.live.trackWidth = 20;
-    
-    // 动画
-    self.live.animation = YES;
-    
-    // 轨道的颜色
-    self.live.trackColor = [UIColor grayColor];
-    
-    // 进度条颜色
-    self.live.progressColor = [UIColor redColor];
-    self.live.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.live];
-   
-    self.label = [[UILabel alloc]initWithFrame:CGRectMake(0, self.live.mj_h+self.live.mj_y+10, self.view.frame.size.width, 30)];
-    self.label.layer.borderColor = [UIColor blackColor].CGColor;
 
-    self.label.textColor = [UIColor blackColor];
-    self.label.font = [UIFont systemFontOfSize:28];
-    self.label.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:self.label];
-
-    [self showAlertView];
 
 
 //    self.stepLbl.text =@"当前步行了0步";
